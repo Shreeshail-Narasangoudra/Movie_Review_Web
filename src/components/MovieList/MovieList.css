@@ -1,0 +1,36 @@
+.movie__list {
+    padding: 0 3rem 3rem 3rem;
+    width: 100%;
+    max-width: 1600px; /* Limit max width to ensure good readability on large screens */
+    margin: 0 auto;
+    background-color: #000; /* Set the background color to black */
+}
+
+.list__title {
+    font-size: 2rem; /* Font size for readability */
+
+    text-align: center;
+    font-weight: bold;
+    color: white; /* Set the heading color to white */
+}
+
+.list__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Creates even spacing for a wider layout */
+    gap: 1rem; /* Space between cards */
+}
+
+/* Individual card adjustments */
+.list__cards .card {
+    flex: 1 1 200px; /* Allow cards to grow to fill space and be responsive */
+    max-width: 250px; /* Limit width for readability */
+    min-width: 180px; /* Set minimum width for smaller screens */
+    margin-bottom: 1rem;
+}
+
+.list__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

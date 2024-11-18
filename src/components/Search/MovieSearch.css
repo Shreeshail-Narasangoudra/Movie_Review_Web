@@ -1,0 +1,24 @@
+.movie-search {
+  padding: 0 3rem 3rem 3rem; /* Same padding as MovieList */
+}
+
+.movie-search h2 {
+  font-size: 2rem; /* Adjusted font size for the title */
+  margin: 2.5rem; /* Same margin as MovieList title */
+  text-align: center; /* Center align the title */
+  color: #ffffff; /* White color for the title */
+}
+
+.movie-search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Space around for even distribution */
+  gap: 1rem; /* Space between cards */
+}
+
+.movie-search-results .card {
+  flex: 1 1 200px; /* Responsive card width */
+  max-width: 250px; /* Limit width for readability */
+  min-width: 180px; /* Set minimum width for smaller screens */
+  margin-bottom: 1rem; /* Space below each card */
+}

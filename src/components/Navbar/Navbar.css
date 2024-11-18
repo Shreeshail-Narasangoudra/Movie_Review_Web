@@ -1,0 +1,22 @@
+.navbar {
+    background-color: black !important;  /* Ensures navbar is black */
+  }
+  
+  .navbar-brand, .nav-link {
+    color: white !important;  /* Ensures text is white */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: white;  /* Ensures the hamburger icon is white */
+  }
+  
+  .btn-outline-light {
+    color: white;
+    border-color: white;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: white;
+    color: black;
+  }
+ 
