@@ -1,16 +1,7 @@
-  import React, { useState } from 'react';
-  import { useNavigate } from 'react-router-dom';
 
   export default function Navbar() {
-    const [searchQuery, setSearchQuery] = useState('');
-    const navigate = useNavigate();
 
-    const handleSearchSubmit = (e) => {
-      e.preventDefault();
-      if (searchQuery) {
-        navigate(`/search?q=${searchQuery}`);
-      }
-    };
+
 
     return (
       <div className="App">
@@ -22,9 +13,6 @@
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="popular">
-                  <a className="nav-link active" aria-current="page" href="/movies/popular">Popular</a>
-                </li>
                 <li className="top_rated">
                   <a className="nav-link active" aria-current="page" href="/movies/top_rated">Top Rated</a>
                 </li>
@@ -35,17 +23,6 @@
                   <a className="nav-link active" aria-current="page" href="/login_sign">Login/Signin</a>
                 </li>
               </ul>
-              <form className="d-flex" role="search" onSubmit={handleSearchSubmit}>
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <button className="btn btn-outline-light" type="submit">Search</button>
-              </form>
             </div>
           </div>
         </nav>

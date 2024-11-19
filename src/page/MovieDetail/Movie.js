@@ -1,4 +1,3 @@
-// src/page/MovieDetail/Movie.js
 import React, { useEffect, useState } from "react";
 import "./Movie.css";
 import { useParams } from "react-router-dom";
@@ -37,7 +36,15 @@ const Movie = () => {
     const handleReviewSubmit = (e) => {
         e.preventDefault();
         if (reviewText.trim()) {
-            const reviewData = { movieId: id, username: "User", reviewText }; // Replace "User" with actual username if available
+            // Get the username from localStorage
+            const username = localStorage.getItem('username') || "Anonymous"; // Default to "Anonymous" if not logged in
+
+            const reviewData = {
+                movieId: id,
+                username: username,
+                reviewText,
+            };
+
             fetch('http://localhost:3001/api/reviews', {
                 method: 'POST',
                 headers: {
@@ -63,9 +70,6 @@ const Movie = () => {
 
     return (
         <div className="movie">
-            <div className="movie__intro">
-                <img className="movie__backdrop" src={`https://image.tmdb.org/t/p/original${currentMovieDetail ? currentMovieDetail.backdrop_path : ""}`} alt={currentMovieDetail ? currentMovieDetail.original_title : ""} />
-            </div>
             <div className="movie__detail">
                 <div className="movie__detailLeft">
                     <div className="movie__posterBox">
@@ -82,11 +86,7 @@ const Movie = () => {
                         </div>
                         <div className="movie__runtime">{currentMovieDetail ? currentMovieDetail.runtime + " mins" : ""}</div>
                         <div className="movie__releaseDate">{currentMovieDetail ? "Release date: " + currentMovieDetail.release_date : ""}</div>
-                        <div className="movie__genres">
-                            {currentMovieDetail && currentMovieDetail.genres ? currentMovieDetail.genres.map(genre => (
-                                <span key={genre.id} className="movie__genre">{genre.name}</span>
-                            )) : ""}
-                        </div>
+        
                     </div>
                     <div className="movie__detailRightBottom">
                         <div className="synopsisText">Synopsis</div>

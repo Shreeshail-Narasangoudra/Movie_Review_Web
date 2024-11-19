@@ -31,6 +31,9 @@ const LoginSignup = () => {
                 const errorData = await response.json();
                 setErrorMessage(errorData.message || 'Something went wrong');
             } else {
+                const data = await response.json();
+                // Store username in localStorage after login
+                localStorage.setItem('username', data.username); // Assuming response includes username
                 console.log('Login successful');
                 navigate('/'); // Redirect to the home page after successful login
             }
@@ -64,6 +67,8 @@ const LoginSignup = () => {
                 const errorData = await response.json();
                 setErrorMessage(errorData.message || 'Something went wrong');
             } else {
+                // Store username in localStorage after successful signup
+                localStorage.setItem('username', signupName);
                 console.log('User registered successfully');
                 setIsLogin(true);
             }
