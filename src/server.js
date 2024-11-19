@@ -11,8 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-const mongoURI = "mongodb://localhost:27017"; // Your MongoDB URI
-const dbName = "Movie_Review"; // Database name
+const mongoURI = "mongodb://localhost:27017"; 
+const dbName = "Movie_Review"; 
 let db;
 
 MongoClient.connect(mongoURI, { useUnifiedTopology: true })
@@ -25,9 +25,6 @@ MongoClient.connect(mongoURI, { useUnifiedTopology: true })
     process.exit(1);
   });
 
-/** 
- * User Authentication Routes 
- */
 
 // Signup Route
 app.post("/signup", async (req, res) => {
@@ -80,11 +77,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-/** 
- * Movie Review Routes 
- */
-
-// Submit a review
+  
 // Submit a review
 app.post("/api/reviews", async (req, res) => {
   const { movieId, username, reviewText } = req.body;

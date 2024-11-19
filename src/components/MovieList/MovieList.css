@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 1600px; /* Limit max width to ensure good readability on large screens */
     margin: 0 auto;
-    background-color: #000; /* Set the background color to black */
+    background-color: white; /* Set the background color to black */
 }
 
 .list__title {
@@ -11,7 +11,7 @@
 
     text-align: center;
     font-weight: bold;
-    color: white; /* Set the heading color to white */
+    color: black; /* Set the heading color to white */
 }
 
 .list__cards {
