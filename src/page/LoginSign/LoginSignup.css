@@ -1,16 +1,17 @@
 /* For the entire container of the login and signup page */
 .login-signup-container {
     display: flex;
+    color: black;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: white; /* Set background color of the page to yellow */
+    background-color: #333; /* Set background color of the page to yellow */
 }
 
 /* To style the login form */
 .form-container {
     background-color: grey;  /* Keeping the login form background black */
-    color: black;
+    color: shite;
     text-align: center;
     padding: 30px;
     border-radius: 10px;
@@ -27,7 +28,7 @@
     margin: 10px 0;
     border: 1px solid #333;
     border-radius: 5px;
-    background-color: #333;
+    background-color: rgb(63, 61, 61);
     color: white;
     font-size: 16px;
 }
@@ -45,7 +46,9 @@
 .error-message {
     color: red;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 30rem;
+    margin-left: 2rem;
+
 }
 
 .form-container p {

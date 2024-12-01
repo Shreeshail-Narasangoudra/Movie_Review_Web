@@ -6,8 +6,6 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './page/home/Home';
 import MovieList from './components/MovieList/MovieList';
 import Movie from './page/MovieDetail/Movie';
-
-
 import LoginSign from './page/LoginSign/LoginSignup';
 
 function App() {
@@ -26,3 +24,4 @@ function App() {
 }
 
 export default App;
+

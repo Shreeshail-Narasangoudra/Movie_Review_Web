@@ -1,3 +1,4 @@
+
 .cards {
     display: inline-block;
     transition: transform .2s;
@@ -34,18 +35,14 @@
 
 
 
-.card__title {
-    font-weight: 900;
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
-}
-
 .card__runtime {
     font-size: .75rem;
     margin-bottom: 0.25rem;
 }
 
-
+.card__rating {
+    float: right;
+}
 
 .card__description {
     font-style: italic;

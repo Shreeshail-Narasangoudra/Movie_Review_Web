@@ -23,14 +23,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.movie__backdrop {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-}
+
 
 /* Movie Details Section */
 .movie__detail {
@@ -229,4 +222,31 @@ body {
         font-size: 0.9rem;
     }
 }
+.delete-button {
+    background-color: grey;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 13rem;
+    font-size: 12px;
+  }
+  
+  .delete-button:hover {    
+    background-color: red;
+  }
+  .edit-button{
+    background-color: grey;
+    color: black;
+    margin-left: 0.1rem;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
 
+    
+  }
+  .edit-button:hover {    
+    background-color: greenyellow;
+  }
+  

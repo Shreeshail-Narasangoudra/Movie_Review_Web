@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginSignup.css';
 
+
 const LoginSignup = () => {
     const [isLogin, setIsLogin] = useState(true);
     const [loginEmail, setLoginEmail] = useState('');
@@ -13,35 +14,7 @@ const LoginSignup = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate(); // React Router hook for navigation
 
-    const handleLoginSubmit = async (e) => {
-        e.preventDefault();
-        setErrorMessage('');
-
-        try {
-            const response = await fetch('http://localhost:3001/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    email: loginEmail,
-                    password: loginPassword,
-                }),
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                setErrorMessage(errorData.message || 'Something went wrong');
-            } else {
-                const data = await response.json();
-                // Store username in localStorage after login
-                localStorage.setItem('username', data.username); // Assuming response includes username
-                console.log('Login successful');
-                navigate('/'); // Redirect to the home page after successful login
-            }
-        } catch (error) {
-            console.error('Error during login:', error);
-            setErrorMessage('Error during login. Please try again.');
-        }
-    };
+   
 
     const handleSignupSubmit = async (e) => {
         e.preventDefault();
@@ -68,7 +41,7 @@ const LoginSignup = () => {
                 setErrorMessage(errorData.message || 'Something went wrong');
             } else {
                 // Store username in localStorage after successful signup
-                localStorage.setItem('username', signupName);
+                // localStorage.setItem('username', signupName);
                 console.log('User registered successfully');
                 setIsLogin(true);
             }
@@ -77,10 +50,39 @@ const LoginSignup = () => {
             setErrorMessage('Error during signup. Please try again.');
         }
     };
+    const handleLoginSubmit = async (e) => {
+        e.preventDefault();
+        setErrorMessage('');
+
+        try {
+            const response = await fetch('http://localhost:3001/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: loginEmail,
+                    password: loginPassword,
+                }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                setErrorMessage(errorData.message || 'Something went wrong');
+            } else {
+                const data = await response.json();
+                // Store username in localStorage after login
+                localStorage.setItem('username', data.username); 
+                console.log('Login successful');
+                navigate('/');
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+            setErrorMessage('Error during login. Please try again.');
+        }
+    };
 
     return (
         <div className="login-signup-container">
-            {errorMessage && <div className="error-message">{errorMessage}</div>}
+            {errorMessage && <span className="error-message">{errorMessage}</span>}
             {isLogin ? (
                 <div className="form-container">
                     <h2>Login</h2>
@@ -138,6 +140,8 @@ const LoginSignup = () => {
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             required
                         />
+
+
                         <button type="submit">Sign Up</button>
                     </form>
                     <p>
